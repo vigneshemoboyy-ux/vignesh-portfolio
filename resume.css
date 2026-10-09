@@ -1,0 +1,95 @@
+/* Resume page — extends style.css design tokens */
+
+.resume-topbar{
+  position:fixed; top:0; left:0; right:0; z-index:1000;
+  background:rgba(6,4,4,0.85); backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line-soft);
+}
+.resume-topbar-inner{
+  display:flex; justify-content:space-between; align-items:center;
+  padding:1.1rem clamp(1.25rem,4vw,3rem);
+}
+.back-link{
+  display:inline-flex; align-items:center; gap:0.5em;
+  font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--text-dim); transition:color .25s ease;
+}
+.back-link:hover{ color:var(--red-bright); }
+
+.resume-page{ padding-top:5.5rem; }
+
+/* ---------- header ---------- */
+.resume-header{ padding:3.5rem 0 2.5rem; border-bottom:1px solid var(--line-soft); }
+.resume-header-inner{ display:grid; grid-template-columns:auto 1fr; gap:2.5rem; align-items:center; }
+.resume-photo{
+  width:140px; height:140px; border-radius:50%; overflow:hidden;
+  border:1px solid var(--line); box-shadow:0 0 40px -10px var(--red-glow);
+}
+.resume-photo img{ width:100%; height:100%; object-fit:cover; }
+.resume-name{ font-size:clamp(2.2rem,5vw,3.4rem); line-height:1; }
+.resume-roles{ font-family:var(--f-mono); font-size:0.85rem; letter-spacing:0.1em; color:var(--red-bright); text-transform:uppercase; margin-top:0.6rem; }
+.resume-location{ color:var(--text-dim); font-size:0.85rem; margin-top:0.7rem; font-family:var(--f-mono); letter-spacing:0.06em; }
+
+.resume-contact-row{ display:flex; flex-wrap:wrap; gap:1.4rem; margin-top:1.6rem; }
+.resume-contact-row a{ display:flex; align-items:center; gap:0.5em; font-size:0.85rem; color:var(--text-dim); transition:color .2s ease; }
+.resume-contact-row a:hover{ color:var(--red-bright); }
+.resume-contact-row .ic{ width:28px; height:28px; border:1px solid var(--line); border-radius:50%; display:flex; align-items:center; justify-content:center; font-size:0.75rem; flex-shrink:0; }
+
+.resume-download-top{ margin-top:1.8rem; }
+
+/* ---------- layout ---------- */
+.resume-body{ padding:3.5rem 0 5rem; }
+.resume-grid{ display:grid; grid-template-columns:320px 1fr; gap:3rem; align-items:start; }
+
+.r-block{ margin-bottom:2.8rem; }
+.r-block:last-child{ margin-bottom:0; }
+.r-block-title{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.16em; color:var(--red-bright); text-transform:uppercase; margin-bottom:1.1rem; display:flex; align-items:center; gap:0.7em; }
+.r-block-title::after{ content:""; flex:1; height:1px; background:var(--line-soft); }
+
+.r-profile-text{ color:var(--text-dim); font-size:0.95rem; }
+
+.r-skill-tag{ display:inline-block; font-family:var(--f-mono); font-size:0.68rem; letter-spacing:0.06em; text-transform:uppercase; border:1px solid var(--line); padding:0.5em 0.9em; margin:0 0.5em 0.5em 0; color:var(--text-dim); }
+
+.r-tool-row{ display:flex; justify-content:space-between; align-items:center; padding:0.7rem 0; border-bottom:1px solid var(--line-soft); font-size:0.9rem; }
+.r-tool-row .lvl{ font-family:var(--f-mono); font-size:0.62rem; letter-spacing:0.08em; color:var(--text-faint); text-transform:uppercase; }
+
+.r-lang-row{ display:flex; justify-content:space-between; padding:0.5rem 0; font-size:0.9rem; color:var(--text-dim); }
+
+.r-personal dt{ font-family:var(--f-mono); font-size:0.6rem; letter-spacing:0.1em; color:var(--text-faint); text-transform:uppercase; margin-top:0.9rem; }
+.r-personal dd{ margin:0.2rem 0 0; font-size:0.9rem; color:var(--text-dim); }
+
+/* ---------- experience timeline ---------- */
+.r-exp-item{ padding-bottom:2.2rem; margin-bottom:2.2rem; border-bottom:1px solid var(--line-soft); position:relative; }
+.r-exp-item:last-child{ border-bottom:none; margin-bottom:0; }
+.r-exp-num{ font-family:var(--f-mono); color:var(--red-bright); font-size:0.85rem; }
+.r-exp-company{ font-size:1.5rem; margin-top:0.4rem; }
+.r-exp-role{ font-family:var(--f-mono); font-size:0.72rem; letter-spacing:0.08em; color:var(--text-dim); text-transform:uppercase; margin-top:0.3rem; }
+.r-exp-meta{ font-family:var(--f-mono); font-size:0.68rem; color:var(--text-faint); letter-spacing:0.06em; margin-top:0.3rem; }
+.r-exp-overview{ color:var(--text-dim); font-size:0.92rem; margin-top:1rem; }
+.r-exp-sub{ font-family:var(--f-mono); font-size:0.65rem; letter-spacing:0.1em; color:var(--red-bright); text-transform:uppercase; margin-top:1.2rem; margin-bottom:0.6rem; }
+.r-exp-list{ display:flex; flex-direction:column; gap:0.5rem; }
+.r-exp-list li{ color:var(--text-dim); font-size:0.9rem; padding-left:1.1rem; position:relative; }
+.r-exp-list li::before{ content:"—"; position:absolute; left:0; color:var(--red-bright); }
+
+/* ---------- education ---------- */
+.r-edu-item{ padding:1.1rem 0; border-bottom:1px solid var(--line-soft); }
+.r-edu-degree{ font-size:1.05rem; }
+.r-edu-meta{ font-family:var(--f-mono); font-size:0.68rem; color:var(--text-dim); letter-spacing:0.06em; margin-top:0.3rem; text-transform:uppercase; }
+
+/* ---------- achievements ---------- */
+.r-ach-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:1px; background:var(--line-soft); border:1px solid var(--line-soft); }
+.r-ach-card{ background:var(--bg); padding:1.4rem; }
+.r-ach-title{ font-family:var(--f-mono); font-size:0.68rem; letter-spacing:0.1em; color:var(--red-bright); text-transform:uppercase; }
+.r-ach-desc{ color:var(--text-dim); font-size:0.85rem; margin-top:0.5rem; }
+
+.resume-download-bottom{ margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--line-soft); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:1.2rem; }
+
+@media (max-width:900px){
+  .resume-grid{ grid-template-columns:1fr; }
+  .resume-header-inner{ grid-template-columns:1fr; text-align:left; }
+  .r-ach-grid{ grid-template-columns:1fr; }
+}
+@media (max-width:480px){
+  .resume-photo{ width:100px; height:100px; }
+  .resume-download-bottom{ flex-direction:column; align-items:flex-start; }
+}
